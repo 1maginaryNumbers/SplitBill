@@ -1,3 +1,7 @@
+function calculateTotal(items) {
+    return items.reduce((acc, item) => acc + item.price, 0);
+}
+
 function calculateTax(totalBill, taxPercentage) {
     return totalBill * (taxPercentage / 100);
 }
@@ -31,6 +35,7 @@ function splitBill(totalBill, itemsByPerson, taxPercentage) {
 }
 
 module.exports = {
+    calculateTotal,
     calculateTax,
     splitBill,
 };
