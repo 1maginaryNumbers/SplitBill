@@ -22,7 +22,7 @@ function splitBill(totalBill, itemsByPerson, taxPercentage) {
     const subtotalByPerson = totalBillByPerson.map(
         (bill, index) => bill - totalTaxByPerson[index]
     );
-    const totalBillWithoutTax = totalBill - totalTax;
+    const totalBillWithoutTax = totalBill;
     return {
         totalBillWithTax,
         totalBillByPerson,
