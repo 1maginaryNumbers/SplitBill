@@ -1,13 +1,17 @@
 const readline = require("readline");
 const { calculateTotal, calculateTax, splitBill } = require("./calculator");
-const { askForItemsForPerson, askTaxPercentage } = require("./prompts");
+const {
+    askForItemsForPerson,
+    askTaxPercentage,
+    askNumberOfPeople,
+} = require("./prompts");
 
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
 
-rl.question("Masukkan jumlah orang: ", (numberOfPeople) => {
+askNumberOfPeople(rl, (numberOfPeople) => {
     const peopleItems = [];
     const peopleNames = [];
 
