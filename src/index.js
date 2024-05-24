@@ -1,5 +1,6 @@
 const readline = require("readline");
 const { calculateTotal, calculateTax, splitBill } = require("./calculator");
+const { askForItemsForPerson, askTaxPercentage } = require("./prompts");
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -26,6 +27,7 @@ rl.question("Masukkan jumlah orang: ", (numberOfPeople) => {
                     totalBillWithTax,
                     totalBillByPerson,
                     totalTaxByPerson,
+                    amountPerPerson,
                     totalTax,
                     subtotalByPerson,
                     totalBillWithoutTax,
