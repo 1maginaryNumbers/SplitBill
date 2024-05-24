@@ -47,6 +47,21 @@ rl.question("Masukkan jumlah orang: ", (numberOfPeople) => {
                         `${peopleNames[index]}: Total Tagihan: ${bill}, Pajak: ${totalTaxByPerson[index]}, Subtotal: ${subtotalByPerson[index]}`
                     );
                 });
+
+                rl.question(
+                    "Apakah tagihan ingin dibagi sama rata? (y/n): ",
+                    (answer) => {
+                        if (
+                            answer.toLowerCase() === "y" ||
+                            answer.toLowerCase() === "yes"
+                        ) {
+                            console.log(
+                                `Tagihan per orang: ${amountPerPerson}`
+                            );
+                        }
+                        rl.close();
+                    }
+                );
             });
         }
     );
