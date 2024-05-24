@@ -9,6 +9,10 @@ function splitBill(totalBill, itemsByPerson, taxPercentage) {
     const totalBillByPerson = itemsByPerson.map(
         (items, index) => calculateTotal(items) + totalTaxByPerson[index]
     );
+    const totalBillWithTax = totalBillByPerson.reduce(
+        (acc, bill) => acc + bill,
+        0
+    );
 
     return {
         totalTaxByPerson,
